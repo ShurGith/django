@@ -4,16 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taller</title>
+    <title>Autores</title>
     <link rel="stylesheet" href="{% static "estilos.css"%}">
 </head>
 <body>
-    <h1>Hola Comunidad</h1>
-<ul>
-    {% for i in objeto %}
-    <li><a href="autor/{{i.id}}">{{i.nombre}}</a></li>
+    <h1>{{objeto.nombre}}</h1>
+
+    {% for i in objeto.frasedb_set.all %}
+    <ul>
+        <li>{{i.cita}}</li>
+    </ul>
     {% endfor %}
-</ul>
-    <script src="{% static "scripts.js" %}"></script>
+    
+    
+<script src="{% static "scripts.js" %}"></script>
+
 </body>
 </html>
